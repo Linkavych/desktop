@@ -24,7 +24,9 @@ echo "[+] Beginning library installation..."
 
 while read -r line; do
     echo "[+] Installing library: $line"
-    apt install "$line";
+    if ! apt install "$line"; then
+        echo "[!] Failed to install: $line"
+    fi
 done
 
 echo "[+] Installation complete!"

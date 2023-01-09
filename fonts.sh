@@ -15,15 +15,18 @@
 #
 #   LICENSE: BSD 3-Clause (copy in repo)
 #==============================================================================#
-echo -e "[+] Installing fonts..."
-echo -e "[+] Changing to /tmp..."
+echo  "[+] Installing fonts..."
+echo  "[+] Changing to /tmp..."
 
 cd /tmp
 
-echo -e "[+] Cloning nerd-fonts repository. This will take a minute..."
-git clone https://github.com/ryanoasis/nerd-fonts.git
+echo  "[+] Cloning nerd-fonts repository. This will take a minute..."
+if ! git clone https://github.com/ryanoasis/nerd-fonts.git; then
+    echo "[!] Failed to clone the nerd-fonts repository!"
+    exit 1
+fi
 
-echo -e "[+] Cloning complete...installing fonts..."
+echo  "[+] Cloning complete...installing fonts..."
 
 cd nerd-fonts
 
@@ -40,7 +43,7 @@ chmod +x install.sh
 
 cd /tmp
 
-echo -e "[+] Cleaning up and removing nerd-fonts..."
+echo  "[+] Cleaning up and removing nerd-fonts..."
 rm -rf nerd-fonts/
 
-echo -e "[+] Install complete!"
+echo  "[+] Install complete!"

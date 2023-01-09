@@ -22,11 +22,17 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-ssh-keygen -t ed25519 -C "$(EMAIL)" -f ~/.ssh/primary_ed25519
+if ! ssh-keygen -t ed25519 -C "$(EMAIL)" -f ~/.ssh/primary_ed25519; then
+    echo "[!] Failed to create new ssh-keys!"
+    exit 1
+fi
 
 eval "$(ssh-agent -s)"
 
-ssh-add ~/.ssh/primary_ed25519
+if ! ssh-add ~/.ssh/primary_ed25519; then
+    echo "[!] Failed to add ssh-keys to ssh-agent!"
+    exit 1
+fi
 
 echo "[+] New keys added to agent."
 echo "[+] Update github/gitlab repositories with new keys before proceeding..."

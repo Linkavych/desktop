@@ -21,16 +21,23 @@ fi
 
 while read -r line; do
     echo "[+] Installing module: $line"
-    python3 -m pip install --user "$line";
+    if ! python3 -m pip install --user "$line";then
+        echo "[!] Failed to install $line"
+    fi
 done < pymodules.txt
 
 # Ensure pipx PATH is set
-python3 -m pipx ensurepath
+if ! python3 -m pipx ensurepath; then
+    echo "[!] Path not set for pipx!"
+    exit 1
+fi
 
 # Install things via pipx that make sense
 while read -r mod; do
     echo "[+] Installing module via pipx: $mod"
-    python3 -m pipx install "$mod";
+    if ! python3 -m pipx install "$mod";then
+        echo "[!] Failed to install $mod with pipx!"
+    fi
 done < pipx_mods.txt
 
 

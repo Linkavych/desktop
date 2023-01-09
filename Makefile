@@ -6,5 +6,5 @@ base:
 	./sshgen.sh
 
 configure:
-	./pymods.sh
+	./pymods.sh |
 	./user_config.sh 

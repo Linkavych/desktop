@@ -17,8 +17,8 @@
 read -n 1 -p "Did you generate new ssh-keys and add them to Github? (y/n)" resp
 echo ""
 case $resp in
-    y|Y) echo -e "[+] Continuing to configure user system..." ;;
-    n|N) echo -e "[!] Configure your ssh-keys first!"; exit 1 ;;
+    y|Y) echo  "[+] Continuing to configure user system..." ;;
+    n|N) echo  "[!] Configure your ssh-keys first!"; exit 1 ;;
 esac
 
 # Begin configuration
@@ -30,7 +30,7 @@ rmdir Templates Pictures Videos Music Public
 # Make some enw directories
 mkdir -pv $HOME/opt $HOME/development
 
-echo -e "[+] Cloning and setting up dotfiles..."
+echo  "[+] Cloning and setting up dotfiles..."
 
 cd $HOME/opt/
 
@@ -42,7 +42,7 @@ make
 
 cd $HOME/development
 
-echo -e "[+] Cloning all development repositories..."
+echo "[+] Cloning all development repositories..."
 
 git clone git@github:Linkavych/malware_analysis_scripts.git
 
@@ -54,7 +54,7 @@ git clone git@github:Linkavych/linkavych.github.io.git blog
 
 git clone git@github:Linkavych/programming.git
 
-echo -e "[+] Cloning obsidian notes repository..."
+echo  "[+] Cloning obsidian notes repository..."
 
 cd $HOME/Documents
 
