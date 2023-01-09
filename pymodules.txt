@@ -1,0 +1,6 @@
+wheel
+requests
+pynvim
+pipx
+httpx
+termcolor

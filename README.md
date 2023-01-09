@@ -1,2 +1,3 @@
-# desktop
-Setup scripts for rebuilding my workstation
+# Setup Scripts
+
+A collection fo bash scripts for quickly setting up a working desktop environment.
