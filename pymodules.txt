@@ -1,6 +1,6 @@
-wheel
-requests
-pynvim
-pipx
 httpx
+pipx
+pynvim
+requests
 termcolor
+wheel

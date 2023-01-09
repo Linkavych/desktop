@@ -1,4 +1,4 @@
 black
+Faker
 flake8
 pylint
-Faker
