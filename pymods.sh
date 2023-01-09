@@ -1,9 +1,9 @@
 #!/bin/sh
 #==============================================================================#
 #
-#   FILE: python-pip.sh 
+#   FILE: pymods.sh 
 #                   
-#   USAGE: ./python-pip.sh
+#   USAGE: ./pymods.sh
 #                   
 #   DESCRIPTION: Installs a variety of python3 libraries.
 #
